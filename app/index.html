@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="chuck">
+<head>
+  <meta charset="UTF-8">
+  <title>Chuck Norris quotes</title>
+
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+  <style>
+    .container-random {
+      text-align: center;
+    }
+
+    .jumbotron {
+      min-height: 500px;
+    }
+  </style>
+
+</head>
+<body ng-controller="AppCtrl as app">
+
+<div class="container">
+  <h3 class="text-center">Chuck Norris Quotes</h3>
+
+  <div class="jumbotron">
+    <h1 class="text-center">{{app.joke}}</h1>
+  </div>
+
+  <div class="container-random">
+    <button class="btn btn-danger" ng-click="app.getRandomQuote()">Get Random Quote</button>
+  </div>
+
+  <hr>
+  <button class="btn btn-default btn-sm" ng-click="app.getQuoteById(index)" ng-repeat="index in app.indeces">
+    {{index}}
+  </button>
+
+</div>
+
+<script src="../node_modules/lodash/index.js"></script>
+<script src="../node_modules/angular/angular.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
